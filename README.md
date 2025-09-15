@@ -41,7 +41,7 @@ Using **Instacart** (customer behavior) + **Walmart** (sales forecasting) datase
 
 ## 🛠 Tools & Technologies
 - Python (pandas, numpy, matplotlib, seaborn, scikit-learn, statsmodels, prophet)  
-- SQL (DuckDB / SQLite)  
+- SQL (MySQL / SQL Server Management Studio / DuckDB / SQLite)  
 - Tableau / Power BI / Looker Studio  
 - GitHub for version control  
 
