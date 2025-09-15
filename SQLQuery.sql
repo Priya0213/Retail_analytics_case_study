@@ -9,8 +9,6 @@ WITH (
 );
 
 
-
-
 BULK INSERT instac_products
 FROM 'E:\DA\Microsoft SQL Server\MSSQL16.SQLEXPRESS\instac_products.csv'
 WITH (
@@ -44,11 +42,6 @@ SELECT COUNT(*) AS null_sales
 FROM walmart_data
 WHERE Weekly_Sales IS NULL;
 
-
-
-
-
-
 --- checking NULLs or missing values for every table --
 DECLARE @TableName NVARCHAR(100) = 'walmart_data';
 DECLARE @sql NVARCHAR(MAX) = '';
@@ -63,8 +56,6 @@ WHERE c.object_id = OBJECT_ID(@TableName);
 SET @sql = LEFT(@sql, LEN(@sql) - 10);
 
 EXEC sp_executesql @sql;
-
-
 
 -- checking duplicates ---
 
@@ -112,8 +103,6 @@ SELECT Store, Date, COUNT(*) AS cnt
 FROM walmart_data
 GROUP BY Store, Date
 HAVING COUNT(*) > 1;
-
-
 
 
 -- Fact Table: Orders (Transaction-level) --
@@ -197,7 +186,6 @@ SELECT
 FROM instac_orders
 GROUP BY user_id;
 
-
 -- dim products
 INSERT INTO dim_products (product_id, product_name, aisle_id, aisle, department_id, department)
 SELECT 
@@ -236,17 +224,4 @@ select count(*) from dim_customers
 select count(*) from dim_date
 select count(*) from walmart_sales
 
-
-
-
 select * from fact_orders
-
-
-
-
-
-
-
-
-
-
